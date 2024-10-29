@@ -1,0 +1,21 @@
+
+services:
+  mdriven-server:
+    image: mdriven/mdriven-server/local:alpine
+    build:
+      dockerfile: MDrivenServer.Dockerfile
+    volumes:
+      - mdriven-server-data:/app
+    ports:
+      - 5010:80
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:5010"]
+    #   interval: 24h
+    #   timeout: 30s
+    #   retries: 5
+    #   start_period: 30s
+
+
+volumes:
+  mdriven-server-data:
+
