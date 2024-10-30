@@ -2,10 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine
 
-RUN apk add --upgrade --no-cache \
-        curl \
-        unzip \
-        xmlstarlet 
+RUN apk add curl unzip xmlstarlet 
 
 WORKDIR /app
 
