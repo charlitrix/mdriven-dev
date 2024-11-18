@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <MDrivenServerOverride MDrivenServerPWD="123456" MDrivenServerUSER="a">http://dockerhost1.internal.nextware.se:5010</MDrivenServerOverride>
+</root>

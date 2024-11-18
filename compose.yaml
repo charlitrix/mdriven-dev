@@ -1,0 +1,31 @@
+services:
+  mdriven_server:
+    image: mdriven-server:alpine
+    build:
+      dockerfile: MDrivenServer.Dockerfile
+    volumes:
+      - mdriven_server_data:/app
+    ports:
+      - 5010:5010
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5010"]
+      interval: 1h
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+  mdriven_turnkey:
+    image: mdriven-turnkey:alpine
+    build:
+      dockerfile: MDrivenTurnkey.Dockerfile
+    volumes:
+      - mdriven_turnkey_data:/app
+    ports:
+      - 5020:5020
+    depends_on:
+      - mdriven_server
+
+volumes:
+  mdriven_turnkey_data:
+  mdriven_server_data:
+
