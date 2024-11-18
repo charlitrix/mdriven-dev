@@ -106,8 +106,9 @@ Contents of turnkey-settings/MDrivenServerOverride.xml
 v) Lastly, start the MDriven Turnkey.
 ```
 ENTRYPOINT ["dotnet", "StreaminAppCoreWebApp.dll", "-port=5020", "-nohttps"]
-Compose File
 ```
+## Compose File
+
 The Compose file is a single configuration file for building and starting the container images for the MDriven Server and MDriven Turnkey.
 ```
 services:
