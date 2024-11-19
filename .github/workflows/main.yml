@@ -36,7 +36,11 @@ jobs:
       -
         name: Test
         run: |
-          docker run --rm ${{env.TEST_TAG}}
+          container_id=$(docker run -d -p 5010:5010 --rm ${{env.TEST_TAG}})
+          sleep 20
+          reponse=$(curl -f http://localhost:5010)
+          echo "Reponse:......$reponse"
+          docker stop $container_id
       -
         name: Build and push
         uses: docker/build-push-action@v6
