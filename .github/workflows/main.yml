@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "**.Dockerfile"
+      - "**.yaml"
+      - "**.xml"
 env:
   TEST_TAG: ${{vars.DOCKERHUB_USERNAME}}/mdriven-test:alpine
   LATEST_TAG: ${{vars.DOCKERHUB_USERNAME}}/mdriven-server-dev:alpine
