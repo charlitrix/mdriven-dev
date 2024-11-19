@@ -56,4 +56,5 @@ jobs:
         with:
           username: ${{vars.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
-          repository: charlitrix/mdriven-dev
+          repository: charlitrix/mdriven-server-dev
+          
