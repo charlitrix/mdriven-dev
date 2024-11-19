@@ -39,7 +39,7 @@ jobs:
           container_id=$(docker run -d -p 5010:5010 --rm ${{env.TEST_TAG}})
           sleep 20
           reponse=$(curl -f http://localhost:5010)
-          echo "Reponse:......$reponse"
+          echo "Response:......$response"
           docker stop $container_id
       -
         name: Build and push
@@ -50,11 +50,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{env.LATEST_TAG}}
-      # -
-      #   name: Update Docker Hub Description
-      #   uses: peter-evans/dockerhub-description@v4
-      #   with:
-      #     username: ${{vars.DOCKERHUB_USERNAME}}
-      #     password: ${{secrets.DOCKERHUB_TOKEN}}
-      #     repository: charlitrix/mdriven-server-dev
           
