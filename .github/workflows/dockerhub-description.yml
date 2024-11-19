@@ -19,4 +19,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         repository: charlitrix/mdriven-server-dev
         short-description: ${{ github.event.repository.description }}
-        enable-url-completion: true
+        enable-url-completion: false
