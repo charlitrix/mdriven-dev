@@ -50,11 +50,11 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ${{env.LATEST_TAG}}
-      -
-        name: Update Docker Hub Description
-        uses: peter-evans/dockerhub-description@v4
-        with:
-          username: ${{vars.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_TOKEN}}
-          repository: charlitrix/mdriven-server-dev
+      # -
+      #   name: Update Docker Hub Description
+      #   uses: peter-evans/dockerhub-description@v4
+      #   with:
+      #     username: ${{vars.DOCKERHUB_USERNAME}}
+      #     password: ${{secrets.DOCKERHUB_TOKEN}}
+      #     repository: charlitrix/mdriven-server-dev
           
